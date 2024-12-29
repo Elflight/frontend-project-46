@@ -3,3 +3,8 @@
 
 ### Github action
 [![linting-testing](https://github.com/Elflight/frontend-project-46/actions/workflows/linting-testing.yml/badge.svg)](https://github.com/Elflight/frontend-project-46/actions/workflows/linting-testing.yml)
+
+### Codeclimate
+[![Maintainability](https://api.codeclimate.com/v1/badges/fcc850c41e58d3101898/maintainability)](https://codeclimate.com/github/Elflight/frontend-project-46/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fcc850c41e58d3101898/test_coverage)](https://codeclimate.com/github/Elflight/frontend-project-46/test_coverage)
