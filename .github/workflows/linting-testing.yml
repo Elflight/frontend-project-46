@@ -1,5 +1,11 @@
 name: linting-testing
-on: push
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+      
 jobs:
   checking:
     runs-on: ubuntu-latest
