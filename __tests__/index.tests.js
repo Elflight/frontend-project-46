@@ -17,3 +17,12 @@ test('jsonToTree', () => {
 
   expect(diffResult).toEqual(treeResult);
 });
+
+test('yamlToTree', () => {
+  const yml1 = getFixturePath('file1.yml');
+  const yml2 = getFixturePath('file2.yml');
+  const treeResult = fs.readFileSync(getFixturePath('result_tree.txt'), 'utf-8');
+  const diffResult = gendiff(yml1, yml2);
+
+  expect(diffResult).toEqual(treeResult);
+});

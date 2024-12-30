@@ -1,4 +1,4 @@
-import parseFile from './parser.js';
+import parseFile from './parsers.js';
 import getDiffTree from './difftree.js';
 import formatDiffResult from './formatter.js';
 
