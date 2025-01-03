@@ -14,3 +14,6 @@
 
 ### Diff flat YML files
 [![asciicast](https://asciinema.org/a/J7pqk1cQzSMFUnHh3IndJKaWk.svg)](https://asciinema.org/a/J7pqk1cQzSMFUnHh3IndJKaWk)
+
+### Diff tree-structured JSON files
+[![asciicast](https://asciinema.org/a/woq5HZhqPWxGMxa7d08b5y4Ty.svg)](https://asciinema.org/a/woq5HZhqPWxGMxa7d08b5y4Ty)

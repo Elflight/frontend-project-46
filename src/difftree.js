@@ -6,6 +6,14 @@ const getDiffTree = (firstObj, secondObj) => {
   const sortedKeys = _.sortBy(keys);
 
   return sortedKeys.map((key) => {
+    // если оба значения являются объектами, то проваливаемся внутрь рекурсией
+    if (_.isObject(firstObj[key]) && _.isObject(secondObj[key])) {
+      return {
+        key,
+        type: 'nested',
+        children: getDiffTree(firstObj[key], secondObj[key]),
+      };
+    }
     // если в первом объекте нет ключа, то он добавлен
     if (!_.has(firstObj, key)) {
       return { key, value: secondObj[key], type: 'added' };
