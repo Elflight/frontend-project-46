@@ -14,12 +14,17 @@ const parsers = {
 
 const parseFile = (filepath) => {
   const fullpath = getFullpath(filepath);
-  if (isFileExists(fullpath)) {
-    const file = fs.readFileSync(fullpath, 'utf8');
-    const ext = getFileExtension(fullpath);
-    return parsers[ext](file);
+  if (!isFileExists(fullpath)) {
+    throw new Error(`File: ${fullpath} not found`);
   }
-  return false;
+  const file = fs.readFileSync(fullpath, 'utf8');
+  const ext = getFileExtension(fullpath);
+
+  if (typeof parsers[ext] === 'undefined') {
+    throw new Error(`Parser for: ${ext} not found`);
+  }
+
+  return parsers[ext](file);
 };
 
 export default parseFile;
