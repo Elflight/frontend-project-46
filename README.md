@@ -20,3 +20,6 @@
 
 ### Diff tree-structured JSON files with plain-output
 [![asciicast](https://asciinema.org/a/VyKiHDPFQAaTtMJLT7eAhXSDw.svg)](https://asciinema.org/a/VyKiHDPFQAaTtMJLT7eAhXSDw)
+
+### Diff tree-structured YML files with json-output
+[![asciicast](https://asciinema.org/a/eO5LyjkFzccffV1TMNOFYyIP3.svg)](https://asciinema.org/a/eO5LyjkFzccffV1TMNOFYyIP3)

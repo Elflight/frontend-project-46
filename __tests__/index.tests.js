@@ -35,3 +35,12 @@ test('jsonToPlain', () => {
 
   expect(diffResult).toEqual(treeResult);
 });
+
+test('yamlToJson', () => {
+  const yml1 = getFixturePath('cfile1.yaml');
+  const yml2 = getFixturePath('cfile2.yaml');
+  const treeResult = fs.readFileSync(getFixturePath('cresult_json.txt'), 'utf-8');
+  const diffResult = gendiff(yml1, yml2, 'json');
+
+  expect(diffResult).toEqual(treeResult);
+});
