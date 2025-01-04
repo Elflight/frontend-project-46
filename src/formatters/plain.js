@@ -9,8 +9,9 @@ const stringify = (value) => {
 };
 
 const formatDiffResult = (tree, parentNodeName = '') => {
+  let nodeName = '';
   const lines = tree.map((node) => {
-    const nodeName = (parentNodeName === '') ? node.key : `${parentNodeName}.${node.key}`;
+    nodeName = (parentNodeName === '') ? node.key : `${parentNodeName}.${node.key}`;
     switch (node.type) {
       case 'added':
         return `Property '${nodeName}' was added with value: ${stringify(node.value)}`;
