@@ -12,6 +12,14 @@ const parsers = {
   yaml: YAML.parse,
 };
 
+const getParsedData = (fileData, fileExtension) => {
+  if (typeof parsers[fileExtension] === 'undefined') {
+    throw new Error(`Parser for: ${fileExtension} not found`);
+  }
+
+  return parsers[fileExtension](fileData);
+};
+
 const parseFile = (filepath) => {
   const fullpath = getFullpath(filepath);
   if (!isFileExists(fullpath)) {
@@ -20,11 +28,7 @@ const parseFile = (filepath) => {
   const file = fs.readFileSync(fullpath, 'utf8');
   const ext = getFileExtension(fullpath);
 
-  if (typeof parsers[ext] === 'undefined') {
-    throw new Error(`Parser for: ${ext} not found`);
-  }
-
-  return parsers[ext](file);
+  return getParsedData(file, ext);
 };
 
 export default parseFile;

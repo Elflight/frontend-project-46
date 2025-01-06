@@ -4,7 +4,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import fs from 'fs';
-import gendiff from '../index.js';
+import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,6 +25,15 @@ test('yamlToStylish', () => {
   const yml2 = getFixturePath('cfile2.yaml');
   const treeResult = fs.readFileSync(getFixturePath('cresult_tree.txt'), 'utf-8');
   const diffResult = gendiff(yml1, yml2);
+
+  expect(diffResult).toEqual(treeResult);
+});
+
+test('jsonToStylishWithParameter', () => {
+  const json1 = getFixturePath('cfile1.json');
+  const json2 = getFixturePath('cfile2.json');
+  const treeResult = fs.readFileSync(getFixturePath('cresult_tree.txt'), 'utf-8');
+  const diffResult = gendiff(json1, json2, 'stylish');
 
   expect(diffResult).toEqual(treeResult);
 });
